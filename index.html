@@ -1260,6 +1260,243 @@ body {
   .tooltip-thumb-wrap { display: none !important; }
   .ss-prev, .ss-next { width: 28px; height: 28px; font-size: 0.95rem; }
 }
+
+/* ===== VIDEO EMBED COMPONENT ===== */
+.vid-section {
+  max-width: 800px;
+  margin: 36px auto;
+  font-family: var(--font-sans);
+}
+.vid-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.chapter.imp  .vid-label { color: var(--c1-accent); }
+.chapter.wwi  .vid-label { color: var(--c2-accent); }
+.chapter.wwii .vid-label { color: var(--c3-accent); }
+.chapter.cw   .vid-label { color: var(--c4-accent); }
+.vid-section-inner {
+  border: 1px solid;
+  overflow: hidden;
+}
+.chapter.imp  .vid-section-inner { border-color: var(--c1-border); }
+.chapter.wwi  .vid-section-inner { border-color: var(--c2-border); }
+.chapter.wwii .vid-section-inner { border-color: var(--c3-border); }
+.chapter.cw   .vid-section-inner { border-color: var(--c4-border); }
+.vid-tabs {
+  display: flex;
+  border-bottom: 1px solid;
+}
+.chapter.imp  .vid-tabs { border-color: var(--c1-border); }
+.chapter.wwi  .vid-tabs { border-color: var(--c2-border); }
+.chapter.wwii .vid-tabs { border-color: var(--c3-border); }
+.chapter.cw   .vid-tabs { border-color: var(--c4-border); }
+.vid-tab {
+  background: transparent;
+  border: none;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  padding: 9px 14px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: inherit;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-align: left;
+  transition: opacity 0.18s;
+}
+.vid-tab:hover { opacity: 0.8; }
+.vid-tab.vid-tab-active { opacity: 1; font-weight: 600; }
+.vid-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.vid-badge-priority { background: #4a6741; color: #fff; }
+.vid-badge-supp     { background: rgba(0,0,0,0.12); color: inherit; }
+.vid-panel { display: none; }
+.vid-panel.vid-panel-active { display: block; }
+.vid-watch-label {
+  padding: 9px 14px 6px;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.chapter.imp  .vid-watch-label { color: var(--c1-accent); }
+.chapter.wwi  .vid-watch-label { color: var(--c2-accent); }
+.chapter.wwii .vid-watch-label { color: var(--c3-accent); }
+.chapter.cw   .vid-watch-label { color: var(--c4-accent); }
+.vid-player-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #0d0d0d;
+  cursor: pointer;
+}
+.vid-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vid-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.72);
+  color: #fff;
+  font-size: 1.5rem;
+  border: 2px solid rgba(255,255,255,0.45);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s, transform 0.2s;
+  padding-left: 4px; /* optical center for ▶ glyph */
+}
+.vid-play-btn:hover {
+  background: rgba(0,0,0,0.92);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.vid-player-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.vid-coverage {
+  font-size: 0.71rem;
+  font-style: italic;
+  opacity: 0.62;
+  margin: 0;
+  padding: 7px 14px 11px;
+  line-height: 1.5;
+}
+
+/* ===== STUDY PLAN SECTION ===== */
+.study-plan {
+  background: #151510;
+  color: #e8e4d4;
+  padding: 72px 24px 80px;
+}
+.study-plan-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.study-plan-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+.study-plan-sub {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  opacity: 0.55;
+  margin: 0 0 44px;
+}
+.study-plan-rule {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 auto 44px;
+}
+.study-plan-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.study-plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+}
+.study-plan-table thead tr { border-bottom: 1px solid rgba(255,255,255,0.14); }
+.study-plan-table th {
+  text-align: left;
+  padding: 8px 14px 10px;
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.study-plan-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  vertical-align: middle;
+  line-height: 1.4;
+}
+.study-plan-table td:first-child {
+  width: 2em;
+  font-weight: 700;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  text-align: center;
+}
+.study-plan-table td:nth-child(3) { white-space: nowrap; font-size: 0.78rem; opacity: 0.7; }
+.study-plan-table td:last-child { white-space: nowrap; font-size: 0.75rem; opacity: 0.55; }
+.study-plan-table a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255,255,255,0.25);
+  transition: text-decoration-color 0.15s;
+}
+.study-plan-table a:hover { text-decoration-color: rgba(255,255,255,0.75); }
+.sp-star { color: #c4a050; font-size: 0.75rem; margin-right: 4px; }
+.sp-row-imp  { background: rgba(139,105,20,0.10); }
+.sp-row-wwi  { background: rgba(107,107,58,0.10); }
+.sp-row-wwii { background: rgba(74,82,64,0.10); }
+.sp-row-cw   { background: rgba(58,74,92,0.10); }
+/* Mobile study plan: card layout */
+.study-plan-cards { display: none; flex-direction: column; gap: 10px; }
+.sp-card {
+  padding: 14px 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.sp-card-num  { font-size: 0.65rem; opacity: 0.45; margin-bottom: 4px; font-family: var(--font-sans); }
+.sp-card-title { font-family: var(--font-sans); font-size: 0.84rem; margin-bottom: 5px; }
+.sp-card-title a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.sp-card-meta  { font-size: 0.71rem; opacity: 0.55; font-family: var(--font-sans); }
+.sp-card.sp-imp  { background: rgba(139,105,20,0.13); }
+.sp-card.sp-wwi  { background: rgba(107,107,58,0.13); }
+.sp-card.sp-wwii { background: rgba(74,82,64,0.13); }
+.sp-card.sp-cw   { background: rgba(58,74,92,0.13); }
+
+@media (max-width: 600px) {
+  .vid-tab { font-size: 0.66rem; padding: 7px 10px; }
+  .vid-play-btn { width: 50px; height: 50px; font-size: 1.25rem; }
+  .study-plan { padding: 52px 16px 60px; }
+  .study-plan-table-wrap { display: none; }
+  .study-plan-cards { display: flex; }
+}
 </style>
 </head>
 <body>
@@ -1347,6 +1584,51 @@ body {
   </div>
 
   <div class="narrative">
+
+    <div class="narrative-section">
+      <div class="vid-section">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-tabs" role="tablist">
+            <button class="vid-tab vid-tab-active" role="tab" aria-selected="true" data-panel="v-c1-0">
+              <span class="vid-badge vid-badge-priority">Priority</span> American Imperialism — Crash Course #28
+            </button>
+            <button class="vid-tab" role="tab" aria-selected="false" data-panel="v-c1-1">
+              <span class="vid-badge vid-badge-supp">Supplementary</span> U.S. Imperialism &amp; Spanish-American War
+            </button>
+            <button class="vid-tab" role="tab" aria-selected="false" data-panel="v-c1-2">
+              <span class="vid-badge vid-badge-supp">Supplementary</span> Imperialism in Latin America
+            </button>
+          </div>
+          <div class="vid-panels">
+            <div class="vid-panel vid-panel-active" id="v-c1-0">
+              <div class="vid-watch-label">WATCH: American Imperialism: Crash Course US History #28</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/QfsfoFqsFk4/hqdefault.jpg" alt="American Imperialism: Crash Course US History #28" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play American Imperialism: Crash Course US History #28" data-vid="QfsfoFqsFk4" data-title="American Imperialism: Crash Course US History #28">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: European &amp; Asian imperialism, Mahan, Hawaii, Spanish-American War, Philippines, Open Door Policy — nearly every Imperialism term on the study guide</p>
+            </div>
+            <div class="vid-panel" id="v-c1-1">
+              <div class="vid-watch-label">WATCH: AP U.S. History: U.S. Imperialism &amp; the Spanish-American War (Full Review)</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/1RjZqeMrWvI/hqdefault.jpg" alt="AP U.S. History: U.S. Imperialism & the Spanish-American War" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play AP U.S. History: U.S. Imperialism & the Spanish-American War" data-vid="1RjZqeMrWvI" data-title="AP U.S. History: U.S. Imperialism & the Spanish-American War (Full Review)">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Deeper dive: USS Maine, Yellow Journalism, De Lôme Letter, Rough Riders, Treaty of Paris, Aguinaldo, Philippine-American War, Foraker Act, Platt Amendment</p>
+            </div>
+            <div class="vid-panel" id="v-c1-2">
+              <div class="vid-watch-label">WATCH: Imperialism in Latin America — The Spanish-American War</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/sUQ9qEUEbUU/hqdefault.jpg" alt="Imperialism in Latin America — The Spanish-American War" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play Imperialism in Latin America — The Spanish-American War" data-vid="sUQ9qEUEbUU" data-title="Imperialism in Latin America — The Spanish-American War">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Focuses on Cuba: Jose Marti, Weyler, Yellow Journalism, USS Maine, San Juan Hill</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="narrative-section">
       <p>By the late 1800s, the world's most powerful nations had decided that power wasn't enough — they wanted <em>more</em>. This hunger had a name: <span class="term" data-term="european-imperialism">European imperialism</span> — the drive by European nations to colonize and control territories across Africa, Asia, and beyond. At the same time, across the Pacific, <span class="term" data-term="asian-imperialism">Asian imperialism</span> was taking shape too, as Japan began eyeing its neighbors with similar ambition.</p>
@@ -1581,6 +1863,40 @@ body {
   <div class="narrative">
 
     <div class="narrative-section">
+      <div class="vid-section">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-tabs" role="tablist">
+            <button class="vid-tab vid-tab-active" role="tab" aria-selected="true" data-panel="v-c2a-0">
+              <span class="vid-badge vid-badge-priority">Priority</span> How WWI Started — Crash Course #209
+            </button>
+            <button class="vid-tab" role="tab" aria-selected="false" data-panel="v-c2a-1">
+              <span class="vid-badge vid-badge-supp">Supplementary</span> Archdukes, Cynicism &amp; WWI — Crash Course #36
+            </button>
+          </div>
+          <div class="vid-panels">
+            <div class="vid-panel vid-panel-active" id="v-c2a-0">
+              <div class="vid-watch-label">WATCH: How World War I Started — Crash Course World History #209</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/Cd2ch4XV84s/hqdefault.jpg" alt="How World War I Started — Crash Course World History #209" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play How World War I Started — Crash Course World History #209" data-vid="Cd2ch4XV84s" data-title="How World War I Started — Crash Course World History #209">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: Franz Ferdinand assassination, Gavrilo Princip, alliance system, mobilization sequence — how the war started</p>
+            </div>
+            <div class="vid-panel" id="v-c2a-1">
+              <div class="vid-watch-label">WATCH: Archdukes, Cynicism, and World War I — Crash Course World History #36</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/_XPZQ0LAlR4/hqdefault.jpg" alt="Archdukes, Cynicism, and World War I — Crash Course World History #36" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play Archdukes, Cynicism, and World War I — Crash Course World History #36" data-vid="_XPZQ0LAlR4" data-title="Archdukes, Cynicism, and World War I — Crash Course World History #36">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: MAIN causes (Militarism, Alliance System, Imperialism, Nationalism), trench warfare, new weapons, final toll — why the war happened</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section">
       <p>By 1914, Europe was a powder keg. Decades of rivalry, arms buildup, and entangling alliances had created a system so tightly wound that one wrong move could detonate everything.</p>
       <p>Four forces had been building for decades — <span class="term" data-term="militarism">militarism</span> (nations glorifying and building massive armies and navies), the <span class="term" data-term="alliance-system">Alliance System</span> (secret treaties that meant one country's war became everyone's war), <span class="term" data-term="imperialism-wwi">imperialism</span> (competition for colonies creating constant friction), and <span class="term" data-term="nationalism">nationalism</span> (fierce ethnic pride, especially in the Balkans, that made compromise impossible). Two armed camps faced each other: the <span class="term" data-term="allies-wwi">Allies</span> (Britain, France, Russia) and the <span class="term" data-term="central-powers">Central Powers</span> (Germany, Austria-Hungary, Ottoman Empire).</p>
     </div>
@@ -1748,6 +2064,40 @@ body {
     </div>
 
     <div class="narrative-section">
+      <div class="vid-section">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-tabs" role="tablist">
+            <button class="vid-tab vid-tab-active" role="tab" aria-selected="true" data-panel="v-c2b-0">
+              <span class="vid-badge vid-badge-priority">Priority</span> America in WWI — Crash Course US History #30
+            </button>
+            <button class="vid-tab" role="tab" aria-selected="false" data-panel="v-c2b-1">
+              <span class="vid-badge vid-badge-supp">Supplementary</span> WWI Battlefields — Crash Course European History #33
+            </button>
+          </div>
+          <div class="vid-panels">
+            <div class="vid-panel vid-panel-active" id="v-c2b-0">
+              <div class="vid-watch-label">WATCH: America in World War I — Crash Course US History #30</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/y59wErqg4Xg/hqdefault.jpg" alt="America in World War I — Crash Course US History #30" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play America in World War I — Crash Course US History #30" data-vid="y59wErqg4Xg" data-title="America in World War I — Crash Course US History #30">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: American neutrality, Lusitania, Zimmermann Note, Selective Service Act, Pershing, Alvin York, Fourteen Points, Versailles Treaty, League of Nations</p>
+            </div>
+            <div class="vid-panel" id="v-c2b-1">
+              <div class="vid-watch-label">WATCH: WWI Battlefields — Crash Course European History #33</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/IIiDULrXaqQ/hqdefault.jpg" alt="WWI Battlefields — Crash Course European History #33" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play WWI Battlefields — Crash Course European History #33" data-vid="IIiDULrXaqQ" data-title="WWI Battlefields — Crash Course European History #33">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: Trench warfare in depth, new weapons, medical issues during WWI, the human cost of the war</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section">
       <div class="section-divider"><h3>Mobilizing America</h3></div>
       <p>The <span class="term" data-term="selective-service-act">Selective Service Act</span> created a draft — nearly 3 million men were conscripted. <span class="term" data-term="us-army-training">U.S. Army Training</span> was rushed but effective. <span class="term" data-term="women-military-wwi">Women and the military</span> found new roles — serving as nurses, telephone operators, and even Navy clerks. <span class="term" data-term="african-americans-wwi">African Americans in the Army</span> served in segregated units, fighting for a democracy that denied them rights at home — the seeds of future civil rights demands.</p>
       <p>The home front transformed too. The <span class="term" data-term="govt-shipbuilding">government impact on shipbuilding</span> was enormous — output multiplied to support the war effort. The <span class="term" data-term="convoy-system">Convoy System</span> — grouping merchant ships with naval escorts — dramatically reduced U-Boat losses.</p>
@@ -1867,6 +2217,20 @@ body {
   </div>
 
   <div class="narrative">
+
+    <div class="narrative-section">
+      <div class="vid-section vid-single">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-watch-label">WATCH: World War II — Crash Course World History #38</div>
+          <div class="vid-player-wrap">
+            <img class="vid-poster" src="https://img.youtube.com/vi/Q78COTwT7nE/hqdefault.jpg" alt="World War II — Crash Course World History #38" loading="lazy">
+            <button class="vid-play-btn" aria-label="Play World War II — Crash Course World History #38" data-vid="Q78COTwT7nE" data-title="World War II — Crash Course World History #38">&#9654;</button>
+          </div>
+          <p class="vid-coverage">Covers: Hitler, Mussolini, fascism, Axis Powers, Holocaust overview, Pearl Harbor, major battles, atomic bomb — best single-video WWII overview</p>
+        </div>
+      </div>
+    </div>
 
     <div class="narrative-section">
       <p>The humiliation of Versailles and the devastation of the Great Depression had broken Europe's faith in democracy. Into that vacuum stepped three men who would set the world on fire. <span class="term" data-term="adolf-hitler">Adolf Hitler</span> in Germany, <span class="term" data-term="benito-mussolini">Benito Mussolini</span> in Italy, and <span class="term" data-term="japan-militarist-leaders">Japan's militarist leaders</span> all embraced <span class="term" data-term="fascism">fascism</span> — a hyper-nationalist, authoritarian ideology that glorified the state, the leader, and military power above all else. Together, Germany, Italy, and Japan formed the <span class="term" data-term="axis-powers">Axis Powers</span>, cemented by the <span class="term" data-term="tripartite-pact">Tripartite Pact</span> of 1940.</p>
@@ -2033,6 +2397,20 @@ body {
     </div>
 
     <div class="narrative-section">
+      <div class="vid-section vid-single">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-watch-label">WATCH: World War II Part 1 — Crash Course US History #35</div>
+          <div class="vid-player-wrap">
+            <img class="vid-poster" src="https://img.youtube.com/vi/MiIUOCUxQpk/hqdefault.jpg" alt="World War II Part 1 — Crash Course US History #35" loading="lazy">
+            <button class="vid-play-btn" aria-label="Play World War II Part 1 — Crash Course US History #35" data-vid="MiIUOCUxQpk" data-title="World War II Part 1 — Crash Course US History #35">&#9654;</button>
+          </div>
+          <p class="vid-coverage">Covers: Pearl Harbor, War Production Board, rationing, Rosie the Riveter, WAAC, GIs, life for American servicemen</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section">
       <div class="section-divider"><h3>Injustice on the Home Front</h3></div>
       <p>Not everyone was treated equally. After Pearl Harbor, <span class="term" data-term="executive-order-9066">Executive Order 9066</span>, signed by FDR, forcibly relocated 120,000 Japanese Americans to <span class="term" data-term="internment-camps">internment camps</span> in remote areas. <span class="term" data-term="internment-reasons">Reasons for Japanese American internment</span> included war hysteria, racism, and political pressure — not evidence of disloyalty. The <span class="term" data-term="japanese-internment-experience">Japanese American experience during internment</span> was one of lost homes, businesses, and dignity.</p>
       <p>Yet the <span class="term" data-term="442nd-regiment">442nd Regiment</span>, composed almost entirely of Japanese Americans, became the most decorated unit in U.S. Army history — fighting for a country that had imprisoned their families.</p>
@@ -2067,6 +2445,20 @@ body {
           <button class="ss-dot" aria-label="Slide 2 of 4"></button>
           <button class="ss-dot" aria-label="Slide 3 of 4"></button>
           <button class="ss-dot" aria-label="Slide 4 of 4"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section">
+      <div class="vid-section vid-single">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-watch-label">WATCH: World War II Part 2 — Crash Course US History #36</div>
+          <div class="vid-player-wrap">
+            <img class="vid-poster" src="https://img.youtube.com/vi/r2WuMzQGbJE/hqdefault.jpg" alt="World War II Part 2 — Crash Course US History #36" loading="lazy">
+            <button class="vid-play-btn" aria-label="Play World War II Part 2 — Crash Course US History #36" data-vid="r2WuMzQGbJE" data-title="World War II Part 2 — Crash Course US History #36">&#9654;</button>
+          </div>
+          <p class="vid-coverage">Covers: Executive Order 9066, internment, 442nd Regiment, Double V Campaign, A. Philip Randolph, MacArthur, Nimitz, Midway, island hopping, Manhattan Project, atomic bomb, Yalta, Nuremberg</p>
         </div>
       </div>
     </div>
@@ -2232,6 +2624,40 @@ body {
   <div class="narrative">
 
     <div class="narrative-section">
+      <div class="vid-section">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-tabs" role="tablist">
+            <button class="vid-tab vid-tab-active" role="tab" aria-selected="true" data-panel="v-c4a-0">
+              <span class="vid-badge vid-badge-priority">Priority</span> The Cold War — Crash Course US History #37
+            </button>
+            <button class="vid-tab" role="tab" aria-selected="false" data-panel="v-c4a-1">
+              <span class="vid-badge vid-badge-supp">Supplementary</span> USA vs. USSR Fight! — Crash Course World History #39
+            </button>
+          </div>
+          <div class="vid-panels">
+            <div class="vid-panel vid-panel-active" id="v-c4a-0">
+              <div class="vid-watch-label">WATCH: The Cold War — Crash Course US History #37</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/9C72ISMF_D0/hqdefault.jpg" alt="The Cold War — Crash Course US History #37" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play The Cold War — Crash Course US History #37" data-vid="9C72ISMF_D0" data-title="The Cold War — Crash Course US History #37">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: Containment, satellite nations, Truman Doctrine, Marshall Plan, Berlin Airlift, NATO, Warsaw Pact, HUAC, McCarthyism, brinkmanship, H-Bomb, Sputnik, U-2 Incident</p>
+            </div>
+            <div class="vid-panel" id="v-c4a-1">
+              <div class="vid-watch-label">WATCH: USA vs. USSR Fight! The Cold War — Crash Course World History #39</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/y9HjvHZfCUI/hqdefault.jpg" alt="USA vs. USSR Fight! The Cold War — Crash Course World History #39" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play USA vs. USSR Fight! The Cold War — Crash Course World History #39" data-vid="y9HjvHZfCUI" data-title="USA vs. USSR Fight! The Cold War — Crash Course World History #39">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: Global Cold War context, nuclear arms race, proxy wars, covert action in Iran and Guatemala</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section">
       <p>The alliance of convenience between the U.S. and USSR died almost before the victory parades ended. Two superpowers with opposite visions for the world now faced each other across a divided Europe — and eventually, the entire globe.</p>
       <p>The defining U.S. strategy was <span class="term" data-term="containment">containment</span> — don't let communism spread beyond where it already was. The ideological and geopolitical standoff that defined the next four decades was the <span class="term" data-term="cold-war">Cold War</span> — a conflict fought everywhere except directly between the two superpowers. The Soviets extended their influence over Eastern Europe through <span class="term" data-term="satellite-nations">satellite nations</span> — countries like Poland, Hungary, and Czechoslovakia that were nominally independent but effectively controlled by Moscow.</p>
       <div class="memory-hook">Containment = a dam against a communist flood. Satellite nations = the USSR's puppet states orbiting their master.</div>
@@ -2283,6 +2709,20 @@ body {
           <button class="ss-dot" aria-label="Slide 2 of 4"></button>
           <button class="ss-dot" aria-label="Slide 3 of 4"></button>
           <button class="ss-dot" aria-label="Slide 4 of 4"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section">
+      <div class="vid-section vid-single">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-watch-label">WATCH: What is McCarthyism? And How Did It Happen? — TED-Ed</div>
+          <div class="vid-player-wrap">
+            <img class="vid-poster" src="https://img.youtube.com/vi/N35IugBYH04/hqdefault.jpg" alt="What is McCarthyism? And How Did It Happen? — TED-Ed" loading="lazy">
+            <button class="vid-play-btn" aria-label="Play What is McCarthyism? And How Did It Happen? — TED-Ed" data-vid="N35IugBYH04" data-title="What is McCarthyism? And How Did It Happen? — TED-Ed">&#9654;</button>
+          </div>
+          <p class="vid-coverage">Covers: HUAC, Hollywood Ten, Blacklist, Alger Hiss, Rosenbergs, Joseph McCarthy, McCarthyism — the definitive short video on this topic</p>
         </div>
       </div>
     </div>
@@ -2443,6 +2883,20 @@ body {
     </div>
 
     <div class="narrative-section">
+      <div class="vid-section vid-single">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-watch-label">WATCH: The Cold War in Asia — Crash Course US History #38</div>
+          <div class="vid-player-wrap">
+            <img class="vid-poster" src="https://img.youtube.com/vi/Y2IcmLkuhG0/hqdefault.jpg" alt="The Cold War in Asia — Crash Course US History #38" loading="lazy">
+            <button class="vid-play-btn" aria-label="Play The Cold War in Asia — Crash Course US History #38" data-vid="Y2IcmLkuhG0" data-title="The Cold War in Asia — Crash Course US History #38">&#9654;</button>
+          </div>
+          <p class="vid-coverage">Covers: Ho Chi Minh, Vietminh, Domino Theory, Dien Bien Phu, Geneva Accords, Ngo Dinh Diem, Vietcong, Ho Chi Minh Trail, Tonkin Gulf Resolution, War of Attrition, Agent Orange, Napalm</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-section">
       <div class="section-divider"><h3>The War Comes Home</h3></div>
       <p><span class="term" data-term="soldier-morale-vietnam">Morale of U.S. soldiers in Vietnam</span> deteriorated badly as the war dragged on — drug use, racial tension, and cynicism increased. The <span class="term" data-term="vietnam-draft">draft during Vietnam</span> fell disproportionately on poor and minority men; college deferments protected the wealthy. <span class="term" data-term="african-americans-vietnam">African Americans in Vietnam</span> served in disproportionate numbers and faced racism both in-country and when they returned home. <span class="term" data-term="women-vietnam">Women in Vietnam</span> served as nurses and support personnel, often under fire — 265,000 women served.</p>
       <p>At home, the <span class="term" data-term="living-room-war">Living Room War</span> — the first war televised nightly into American living rooms — eroded public support in ways no previous war had. The <span class="term" data-term="credibility-gap">Credibility Gap</span> widened as the government's optimistic claims collided with nightly images of body bags and burning villages.</p>
@@ -2492,6 +2946,40 @@ body {
           <li><strong>Living Room War</strong> → public turns against it</li>
           <li><strong>Credibility Gap</strong> → government loses trust</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="narrative-section">
+      <div class="vid-section">
+        <div class="vid-label">&#9654; Video Resource</div>
+        <div class="vid-section-inner">
+          <div class="vid-tabs" role="tablist">
+            <button class="vid-tab vid-tab-active" role="tab" aria-selected="true" data-panel="v-c4d-0">
+              <span class="vid-badge vid-badge-priority">Priority</span> The 1960s in America — Crash Course US History #40
+            </button>
+            <button class="vid-tab" role="tab" aria-selected="false" data-panel="v-c4d-1">
+              <span class="vid-badge vid-badge-supp">Supplementary</span> The Vietnam War Ep. 1 — Ken Burns / PBS
+            </button>
+          </div>
+          <div class="vid-panels">
+            <div class="vid-panel vid-panel-active" id="v-c4d-0">
+              <div class="vid-watch-label">WATCH: The 1960s in America — Crash Course US History #40</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/lkXFb1sMa38/hqdefault.jpg" alt="The 1960s in America — Crash Course US History #40" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play The 1960s in America — Crash Course US History #40" data-vid="lkXFb1sMa38" data-title="The 1960s in America — Crash Course US History #40">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Covers: New Left, SDS, Free Speech Movement, Living Room War, Credibility Gap, draft, African Americans in Vietnam, Doves vs. Hawks, Kent State, Nixon, Vietnamization, Pentagon Papers</p>
+            </div>
+            <div class="vid-panel" id="v-c4d-1">
+              <div class="vid-watch-label">WATCH: The Vietnam War Episode 1 — Déjà Vu (Ken Burns / PBS)</div>
+              <div class="vid-player-wrap">
+                <img class="vid-poster" src="https://img.youtube.com/vi/JQi-ttuMRW8/hqdefault.jpg" alt="The Vietnam War Episode 1 — Déjà Vu (Ken Burns / PBS)" loading="lazy">
+                <button class="vid-play-btn" aria-label="Play The Vietnam War Episode 1 — Déjà Vu (Ken Burns / PBS)" data-vid="JQi-ttuMRW8" data-title="The Vietnam War Episode 1 — Déjà Vu (Ken Burns / PBS)">&#9654;</button>
+              </div>
+              <p class="vid-coverage">Full documentary episode: Ho Chi Minh, French Indochina, Vietminh, Dien Bien Phu, Geneva Accords, early U.S. involvement — watch first 20–30 min for exam-relevant content</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -2581,6 +3069,121 @@ body {
     <div class="closing-rule"></div>
     <p class="closing-body">You've covered Imperialism, WWI, WWII, and the Cold War.<br>Review each chapter's MEMORY AIDS before your exam.</p>
     <button class="start-over-btn" onclick="document.getElementById('ch1').scrollIntoView({behavior:'smooth'})">↑ Start Over — Chapter 1</button>
+  </div>
+</section>
+
+<!-- ===== STUDY PLAN ===== -->
+<section class="study-plan" aria-label="Exam study plan">
+  <div class="study-plan-inner">
+    <h2 class="study-plan-title">Your Exam Study Plan</h2>
+    <p class="study-plan-sub">Watch these 8 videos in order. Total time: ~1 hour 45 minutes.</p>
+    <div class="study-plan-rule"></div>
+    <!-- Desktop table -->
+    <div class="study-plan-table-wrap">
+      <table class="study-plan-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Video</th>
+            <th>Chapter</th>
+            <th>Length</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="sp-row-imp">
+            <td>1</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=QfsfoFqsFk4" target="_blank" rel="noopener noreferrer">American Imperialism — Crash Course US History #28</a></td>
+            <td>Imperialism</td>
+            <td>~13 min</td>
+          </tr>
+          <tr class="sp-row-wwi">
+            <td>2</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=Cd2ch4XV84s" target="_blank" rel="noopener noreferrer">How WWI Started — Crash Course World History #209</a></td>
+            <td>WWI</td>
+            <td>~12 min</td>
+          </tr>
+          <tr class="sp-row-wwi">
+            <td>3</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=_XPZQ0LAlR4" target="_blank" rel="noopener noreferrer">Archdukes, Cynicism &amp; WWI — Crash Course World History #36</a></td>
+            <td>WWI</td>
+            <td>~12 min</td>
+          </tr>
+          <tr class="sp-row-wwi">
+            <td>4</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=y59wErqg4Xg" target="_blank" rel="noopener noreferrer">America in WWI — Crash Course US History #30</a></td>
+            <td>WWI</td>
+            <td>~13 min</td>
+          </tr>
+          <tr class="sp-row-wwii">
+            <td>5</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=MiIUOCUxQpk" target="_blank" rel="noopener noreferrer">WWII Part 1 — Crash Course US History #35</a></td>
+            <td>WWII</td>
+            <td>~13 min</td>
+          </tr>
+          <tr class="sp-row-wwii">
+            <td>6</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=r2WuMzQGbJE" target="_blank" rel="noopener noreferrer">WWII Part 2 — Crash Course US History #36</a></td>
+            <td>WWII</td>
+            <td>~13 min</td>
+          </tr>
+          <tr class="sp-row-cw">
+            <td>7</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=9C72ISMF_D0" target="_blank" rel="noopener noreferrer">The Cold War — Crash Course US History #37</a></td>
+            <td>Cold War</td>
+            <td>~14 min</td>
+          </tr>
+          <tr class="sp-row-cw">
+            <td>8</td>
+            <td><span class="sp-star">&#9733;</span><a href="https://www.youtube.com/watch?v=Y2IcmLkuhG0" target="_blank" rel="noopener noreferrer">Cold War in Asia — Crash Course US History #38</a></td>
+            <td>Vietnam</td>
+            <td>~13 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Mobile cards -->
+    <div class="study-plan-cards" aria-hidden="true">
+      <div class="sp-card sp-imp">
+        <div class="sp-card-num">1 · Imperialism · ~13 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=QfsfoFqsFk4" target="_blank" rel="noopener noreferrer">American Imperialism — Crash Course US History #28</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+      <div class="sp-card sp-wwi">
+        <div class="sp-card-num">2 · WWI · ~12 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=Cd2ch4XV84s" target="_blank" rel="noopener noreferrer">How WWI Started — Crash Course World History #209</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+      <div class="sp-card sp-wwi">
+        <div class="sp-card-num">3 · WWI · ~12 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=_XPZQ0LAlR4" target="_blank" rel="noopener noreferrer">Archdukes, Cynicism &amp; WWI — Crash Course World History #36</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+      <div class="sp-card sp-wwi">
+        <div class="sp-card-num">4 · WWI · ~13 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=y59wErqg4Xg" target="_blank" rel="noopener noreferrer">America in WWI — Crash Course US History #30</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+      <div class="sp-card sp-wwii">
+        <div class="sp-card-num">5 · WWII · ~13 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=MiIUOCUxQpk" target="_blank" rel="noopener noreferrer">WWII Part 1 — Crash Course US History #35</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+      <div class="sp-card sp-wwii">
+        <div class="sp-card-num">6 · WWII · ~13 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=r2WuMzQGbJE" target="_blank" rel="noopener noreferrer">WWII Part 2 — Crash Course US History #36</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+      <div class="sp-card sp-cw">
+        <div class="sp-card-num">7 · Cold War · ~14 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=9C72ISMF_D0" target="_blank" rel="noopener noreferrer">The Cold War — Crash Course US History #37</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+      <div class="sp-card sp-cw">
+        <div class="sp-card-num">8 · Vietnam · ~13 min</div>
+        <div class="sp-card-title"><a href="https://www.youtube.com/watch?v=Y2IcmLkuhG0" target="_blank" rel="noopener noreferrer">Cold War in Asia — Crash Course US History #38</a></div>
+        <div class="sp-card-meta">Priority &#9733;</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -3609,6 +4212,56 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.narrative-section').forEach(el => observer.observe(el));
+
+// ===== VIDEO EMBED — click-to-load iframe =====
+document.body.addEventListener('click', function(e) {
+  const btn = e.target.closest('.vid-play-btn');
+  if (!btn) return;
+  const wrap = btn.closest('.vid-player-wrap');
+  const vidId    = btn.dataset.vid;
+  const vidTitle = btn.dataset.title || 'Video';
+  if (!vidId || !wrap) return;
+
+  // Remove poster image and play button
+  const poster = wrap.querySelector('.vid-poster');
+  if (poster) poster.remove();
+  btn.remove();
+
+  // Build and inject the iframe
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube-nocookie.com/embed/' + vidId + '?autoplay=0&rel=0&modestbranding=1';
+  iframe.title = vidTitle;
+  iframe.loading = 'lazy';
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+  iframe.allowFullscreen = true;
+  wrap.appendChild(iframe);
+});
+
+// ===== VIDEO TABS — panel switching =====
+document.body.addEventListener('click', function(e) {
+  const tab = e.target.closest('.vid-tab');
+  if (!tab) return;
+  const tabList = tab.closest('.vid-tabs');
+  const panelId = tab.dataset.panel;
+  if (!tabList || !panelId) return;
+  const inner = tabList.closest('.vid-section-inner');
+  if (!inner) return;
+
+  // Deactivate all tabs in this group
+  tabList.querySelectorAll('.vid-tab').forEach(function(t) {
+    t.classList.remove('vid-tab-active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  tab.classList.add('vid-tab-active');
+  tab.setAttribute('aria-selected', 'true');
+
+  // Show the matching panel, hide others
+  inner.querySelectorAll('.vid-panel').forEach(function(p) {
+    p.classList.remove('vid-panel-active');
+  });
+  var panel = document.getElementById(panelId);
+  if (panel) panel.classList.add('vid-panel-active');
+});
 
 /* ============================================================
    QUICK REVIEW
