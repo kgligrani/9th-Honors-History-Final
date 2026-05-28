@@ -1261,6 +1261,20 @@ body {
 /* Failed slides: hide entirely */
 .ss-slide.ss-failed { display: none !important; }
 
+/* Skeleton loading shimmer while wiki images fetch */
+@keyframes ss-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.ss-img[src=""] {
+  background: linear-gradient(90deg, #1a1a14 25%, #2d2d1f 50%, #1a1a14 75%);
+  background-size: 200% 100%;
+  animation: ss-shimmer 1.6s infinite linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ss-img[src=""] { animation: none; background: #1a1a14; }
+}
+
 /* Single-slide: hide controls */
 .img-slideshow[data-count="1"] .ss-prev,
 .img-slideshow[data-count="1"] .ss-next,
@@ -1569,15 +1583,15 @@ body {
     <div class="img-slideshow ss-hero" id="ss-h1" data-count="3" aria-label="Chapter 1 historical images">
       <div class="ss-track">
         <div class="ss-slide ss-active">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Scramble_Africa_1880_1913.png/1200px-Scramble_Africa_1880_1913.png" alt="Map of European colonial territories in Africa circa 1900, showing the Scramble for Africa" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="Map of European colonial territories in Africa circa 1900, showing the Scramble for Africa" loading="eager">
           <div class="ss-caption">European colonial territories in Africa, 1880–1913 — Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/USS_Olympia_art.jpg/1200px-USS_Olympia_art.jpg" alt="USS Olympia, Commodore Dewey's flagship at the Battle of Manila Bay, 1898" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="USS Olympia, Commodore Dewey's flagship at the Battle of Manila Bay, 1898" loading="eager">
           <div class="ss-caption">USS Olympia, Dewey's flagship at Manila Bay, 1898 — Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Keppler_-_The_Pirate_Ship_of_Imperialism.jpg/1200px-Keppler_-_The_Pirate_Ship_of_Imperialism.jpg" alt="Political cartoon depicting American imperialism circa 1900" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="Political cartoon depicting American imperialism circa 1900" loading="eager">
           <div class="ss-caption">Imperialism-era political cartoon — Library of Congress</div>
         </div>
       </div>
@@ -1667,19 +1681,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c1-1" data-count="4" aria-label="Imperialism era images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Scramble_Africa_1880_1913.png/900px-Scramble_Africa_1880_1913.png" alt="Map showing European colonial territories across Africa during the Scramble for Africa, 1880–1913" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Map showing European colonial territories across Africa during the Scramble for Africa, 1880–1913" loading="eager">
             <div class="ss-caption">European colonial territories in Africa, 1880–1913 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Alfred_Thayer_Mahan.jpg/600px-Alfred_Thayer_Mahan.jpg" alt="Portrait of Alfred Thayer Mahan, American naval strategist and author" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Portrait of Alfred Thayer Mahan, American naval strategist and author" loading="eager">
             <div class="ss-caption">Alfred Thayer Mahan, naval strategist — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/School_Begins_Puck_1_28_1899.jpg/900px-School_Begins_Puck_1_28_1899.jpg" alt="School Begins, Puck magazine political cartoon depicting American imperialism, 1899" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="School Begins, Puck magazine political cartoon depicting American imperialism, 1899" loading="eager">
             <div class="ss-caption">School Begins — Puck magazine cartoon depicting imperial policy, 1899 — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Uss_olympia_in_1888.jpg/900px-Uss_olympia_in_1888.jpg" alt="USS Olympia, flagship of Commodore George Dewey at the Battle of Manila Bay" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="USS Olympia, flagship of Commodore George Dewey at the Battle of Manila Bay" loading="eager">
             <div class="ss-caption">USS Olympia, Dewey's flagship — Wikimedia Commons</div>
           </div>
         </div>
@@ -1704,15 +1718,15 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c1-2" data-count="3" aria-label="Hawaii annexation images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/QueenLiliuokalani.jpg/600px-QueenLiliuokalani.jpg" alt="Official portrait of Queen Liliuokalani, last monarch of Hawaii" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Official portrait of Queen Liliuokalani, last monarch of Hawaii" loading="eager">
             <div class="ss-caption">Queen Liliuokalani, last monarch of Hawaii — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Iolani_Palace_Exterior.jpg/900px-Iolani_Palace_Exterior.jpg" alt="Iolani Palace in Honolulu, Hawaii, official residence of the Hawaiian monarchs" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Iolani Palace in Honolulu, Hawaii, official residence of the Hawaiian monarchs" loading="eager">
             <div class="ss-caption">Iolani Palace, Honolulu, 1890s — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Liliuokalani_-_Brady-Handy.jpg/600px-Liliuokalani_-_Brady-Handy.jpg" alt="Queen Liliuokalani photograph circa 1891" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Queen Liliuokalani photograph circa 1891" loading="eager">
             <div class="ss-caption">Queen Liliuokalani, c. 1891 — Brady-Handy Collection, Library of Congress</div>
           </div>
         </div>
@@ -1750,19 +1764,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c1-3" data-count="4" aria-label="Path to the Spanish-American War images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/USS_Maine_1898.jpg/900px-USS_Maine_1898.jpg" alt="USS Maine battleship in Havana Harbor before the explosion, 1898" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="USS Maine battleship in Havana Harbor before the explosion, 1898" loading="eager">
             <div class="ss-caption">USS Maine in Havana Harbor, 1898 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Valeriano_Weyler.jpg/600px-Valeriano_Weyler.jpg" alt="Portrait of General Valeriano Weyler, Spanish general nicknamed The Butcher" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Portrait of General Valeriano Weyler, Spanish general nicknamed The Butcher" loading="eager">
             <div class="ss-caption">General Valeriano Weyler, "The Butcher" — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Jose-Marti.jpg/600px-Jose-Marti.jpg" alt="Portrait of José Martí, Cuban poet and revolutionary leader" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Portrait of José Martí, Cuban poet and revolutionary leader" loading="eager">
             <div class="ss-caption">José Martí, Cuban revolutionary poet — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/William_McKinley_by_Courtney_Art_Studio%2C_1896.jpg/600px-William_McKinley_by_Courtney_Art_Studio,_1896.jpg" alt="Portrait of President William McKinley" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Portrait of President William McKinley" loading="eager">
             <div class="ss-caption">President William McKinley — Library of Congress</div>
           </div>
         </div>
@@ -1787,19 +1801,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c1-4" data-count="4" aria-label="Spanish-American War images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/The_Rough_Riders_San_Juan_Hill.jpg/900px-The_Rough_Riders_San_Juan_Hill.jpg" alt="The Rough Riders charging up San Juan Hill in Cuba, 1898" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="The Rough Riders charging up San Juan Hill in Cuba, 1898" loading="eager">
             <div class="ss-caption">Rough Riders at San Juan Hill, Cuba, 1898 — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/George_Dewey_-_H-51401.jpg/600px-George_Dewey_-_H-51401.jpg" alt="Commodore George Dewey, U.S. Navy, hero of Manila Bay" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Commodore George Dewey, U.S. Navy, hero of Manila Bay" loading="eager">
             <div class="ss-caption">Commodore George Dewey — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Emilio_Aguinaldo_y_Famy.jpg/600px-Emilio_Aguinaldo_y_Famy.jpg" alt="Emilio Aguinaldo, Filipino independence leader" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Emilio Aguinaldo, Filipino independence leader" loading="eager">
             <div class="ss-caption">Emilio Aguinaldo, Filipino independence leader — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Philippine_American_War_Crowd.jpg/900px-Philippine_American_War_Crowd.jpg" alt="Scene from the Philippine-American War, 1899–1902" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Scene from the Philippine-American War, 1899–1902" loading="eager">
             <div class="ss-caption">Philippine-American War, 1899–1902 — Library of Congress</div>
           </div>
         </div>
@@ -1846,15 +1860,15 @@ body {
     <div class="img-slideshow ss-hero" id="ss-h2" data-count="3" aria-label="Chapter 2 historical images">
       <div class="ss-track">
         <div class="ss-slide ss-active">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Trench_warfare_-_AIF_-_AWM_E03766.jpg/1200px-Trench_warfare_-_AIF_-_AWM_E03766.jpg" alt="Allied soldiers in a World War I trench on the Western Front" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="Allied soldiers in a World War I trench on the Western Front" loading="eager">
           <div class="ss-caption">Allied soldiers in the trenches, Western Front — Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Cheshire_Regiment_trench_Somme_1916.jpg/1200px-Cheshire_Regiment_trench_Somme_1916.jpg" alt="British soldiers going over the top at the Somme, 1916" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="British soldiers going over the top at the Somme, 1916" loading="eager">
           <div class="ss-caption">Cheshire Regiment at the Somme, 1916 — Imperial War Museum / Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gassed_-_John_Singer_Sargent.jpg/1200px-Gassed_-_John_Singer_Sargent.jpg" alt="Gassed, painting by John Singer Sargent depicting WWI gas attack casualties" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="Gassed, painting by John Singer Sargent depicting WWI gas attack casualties" loading="eager">
           <div class="ss-caption">Gassed, John Singer Sargent, 1919 — Imperial War Museum</div>
         </div>
       </div>
@@ -1933,19 +1947,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c2-1" data-count="4" aria-label="WWI causes images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Bundesarchiv_Bild_183-R37452%2C_Erster_Weltkrieg%2C_Westfront.jpg/900px-Bundesarchiv_Bild_183-R37452,_Erster_Weltkrieg,_Westfront.jpg" alt="German military parade before World War I, demonstrating militarism" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="German military parade before World War I, demonstrating militarism" loading="eager">
             <div class="ss-caption">European military buildup before 1914 — Bundesarchiv / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Map_Europe_alliances_1914-en.svg/900px-Map_Europe_alliances_1914-en.svg" alt="Map of European alliance system in 1914, showing Triple Alliance and Triple Entente" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Map of European alliance system in 1914, showing Triple Alliance and Triple Entente" loading="eager">
             <div class="ss-caption">European alliance system, 1914 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Map_of_the_world_in_1898.jpg/900px-Map_of_the_world_in_1898.jpg" alt="World map in 1898 showing European colonial empires and imperial competition" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="World map in 1898 showing European colonial empires and imperial competition" loading="eager">
             <div class="ss-caption">European colonial empires, 1898 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Assassination_of_Archduke_Franz_Ferdinand_illustration.jpg/900px-Assassination_of_Archduke_Franz_Ferdinand_illustration.jpg" alt="Illustration of the assassination of Archduke Franz Ferdinand in Sarajevo, 1914" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Illustration of the assassination of Archduke Franz Ferdinand in Sarajevo, 1914" loading="eager">
             <div class="ss-caption">Assassination of Archduke Franz Ferdinand, Sarajevo, June 28, 1914 — Wikimedia Commons</div>
           </div>
         </div>
@@ -1970,15 +1984,15 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c2-2" data-count="3" aria-label="Franz Ferdinand assassination images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Erzherzog_Franz_Ferdinand_von_%C3%96sterreich_Este.jpg/600px-Erzherzog_Franz_Ferdinand_von_Ãsterreich_Este.jpg" alt="Official portrait of Archduke Franz Ferdinand of Austria" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Official portrait of Archduke Franz Ferdinand of Austria" loading="eager">
             <div class="ss-caption">Archduke Franz Ferdinand of Austria — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Gavrilo_Princip_1914.jpg/600px-Gavrilo_Princip_1914.jpg" alt="Gavrilo Princip, the Serbian nationalist who assassinated Archduke Franz Ferdinand" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Gavrilo Princip, the Serbian nationalist who assassinated Archduke Franz Ferdinand" loading="eager">
             <div class="ss-caption">Gavrilo Princip, 1914 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Franz_Ferdinand_Sarajevo_1914.jpg/900px-Franz_Ferdinand_Sarajevo_1914.jpg" alt="Franz Ferdinand in Sarajevo on the day of his assassination, June 28 1914" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Franz Ferdinand in Sarajevo on the day of his assassination, June 28 1914" loading="eager">
             <div class="ss-caption">Archduke Franz Ferdinand in Sarajevo, June 28, 1914 — Wikimedia Commons</div>
           </div>
         </div>
@@ -2001,19 +2015,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c2-3" data-count="4" aria-label="WWI trench warfare images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Trench_warfare_-_AIF_-_AWM_E03766.jpg/900px-Trench_warfare_-_AIF_-_AWM_E03766.jpg" alt="Allied soldiers in World War I trenches on the Western Front" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Allied soldiers in World War I trenches on the Western Front" loading="eager">
             <div class="ss-caption">Allied troops in the trenches, Western Front — Australian War Memorial / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Yperite_spray_WWI.jpg/900px-Yperite_spray_WWI.jpg" alt="Soldiers wearing gas masks during a World War I chemical attack" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Soldiers wearing gas masks during a World War I chemical attack" loading="eager">
             <div class="ss-caption">Gas masks — chemical warfare on the Western Front — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Flickr_-_The_U.S._Army_-_%27The_Whippet%27_tank.jpg/900px-Flickr_-_The_U.S._Army_-_'The_Whippet'_tank.jpg" alt="British Whippet tank on the Western Front in World War I" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="British Whippet tank on the Western Front in World War I" loading="eager">
             <div class="ss-caption">British Whippet tank, Western Front — U.S. Army / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Battle_of_the_Somme%2C_1_July_1916.jpg/900px-Battle_of_the_Somme,_1_July_1916.jpg" alt="Battle of the Somme landscape, July 1 1916, showing devastated terrain" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Battle of the Somme landscape, July 1 1916, showing devastated terrain" loading="eager">
             <div class="ss-caption">Battle of the Somme landscape, July 1, 1916 — Imperial War Museum / Wikimedia Commons</div>
           </div>
         </div>
@@ -2051,19 +2065,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c2-4" data-count="4" aria-label="America enters WWI images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/RMS_Lusitania.jpg/900px-RMS_Lusitania.jpg" alt="RMS Lusitania, the British ocean liner sunk by a German U-boat in 1915" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="RMS Lusitania, the British ocean liner sunk by a German U-boat in 1915" loading="eager">
             <div class="ss-caption">RMS Lusitania, sunk by a German U-boat May 7, 1915 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Zimmermann_telegram.jpg/700px-Zimmermann_telegram.jpg" alt="The decoded Zimmermann Telegram, the secret German message proposing alliance with Mexico against the United States" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="The decoded Zimmermann Telegram, the secret German message proposing alliance with Mexico against the United States" loading="eager">
             <div class="ss-caption">The Zimmermann Telegram, intercepted and decoded by British intelligence, 1917 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/U-35_Ubiquity.jpg/900px-U-35_Ubiquity.jpg" alt="German U-boat submarine surfaced in World War I" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="German U-boat submarine surfaced in World War I" loading="eager">
             <div class="ss-caption">German U-boat, World War I — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Woodrow_Wilson_-_H%26E.jpg/600px-Woodrow_Wilson_-_H&E.jpg" alt="Official presidential portrait of Woodrow Wilson" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Official presidential portrait of Woodrow Wilson" loading="eager">
             <div class="ss-caption">President Woodrow Wilson — Library of Congress</div>
           </div>
         </div>
@@ -2123,15 +2137,15 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c2-5" data-count="3" aria-label="American Expeditionary Forces images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/BlackJack_Pershing.jpg/600px-BlackJack_Pershing.jpg" alt="General John J. Pershing, commander of the American Expeditionary Forces in World War I" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="General John J. Pershing, commander of the American Expeditionary Forces in World War I" loading="eager">
             <div class="ss-caption">General John J. "Black Jack" Pershing — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Sergeant_Alvin_C._York.jpg/600px-Sergeant_Alvin_C._York.jpg" alt="Sergeant Alvin York, America's greatest World War I hero" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Sergeant Alvin York, America's greatest World War I hero" loading="eager">
             <div class="ss-caption">Sergeant Alvin C. York — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/American_Troops_in_France_WWI.jpg/900px-American_Troops_in_France_WWI.jpg" alt="American Expeditionary Forces troops arriving in France, 1917" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="American Expeditionary Forces troops arriving in France, 1917" loading="eager">
             <div class="ss-caption">American troops arriving in France, 1917 — National Archives / Wikimedia Commons</div>
           </div>
         </div>
@@ -2157,15 +2171,15 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c2-6" data-count="3" aria-label="Versailles Treaty images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Paris_peace_conf_1919.jpg/900px-Paris_peace_conf_1919.jpg" alt="Paris Peace Conference, 1919, delegates gathered to negotiate the post-WWI settlement" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Paris Peace Conference, 1919, delegates gathered to negotiate the post-WWI settlement" loading="eager">
             <div class="ss-caption">Paris Peace Conference, 1919 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Treaty_of_Versailles_Signing_Ceremony.jpg/900px-Treaty_of_Versailles_Signing_Ceremony.jpg" alt="Signing of the Treaty of Versailles in the Hall of Mirrors, Versailles, June 28 1919" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Signing of the Treaty of Versailles in the Hall of Mirrors, Versailles, June 28 1919" loading="eager">
             <div class="ss-caption">Signing of the Treaty of Versailles, June 28, 1919 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Woodrow_Wilson_-_H%26E.jpg/600px-Woodrow_Wilson_-_H&E.jpg" alt="Woodrow Wilson at the Paris Peace Conference, 1919" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Woodrow Wilson at the Paris Peace Conference, 1919" loading="eager">
             <div class="ss-caption">President Wilson at the Paris Peace Conference, 1919 — Library of Congress</div>
           </div>
         </div>
@@ -2202,15 +2216,15 @@ body {
     <div class="img-slideshow ss-hero" id="ss-h3" data-count="3" aria-label="Chapter 3 historical images">
       <div class="ss-track">
         <div class="ss-slide ss-active">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg/1200px-Into_the_Jaws_of_Death_23-0455M_edit.jpg" alt="U.S. troops landing at Normandy, D-Day June 6 1944, wide shot showing landing craft" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="U.S. troops landing at Normandy, D-Day June 6 1944, wide shot showing landing craft" loading="eager">
           <div class="ss-caption">D-Day landings, Normandy, June 6, 1944 — National Archives / Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Kissing_the_War_Goodbye.jpg/1200px-Kissing_the_War_Goodbye.jpg" alt="V-J Day celebration in Times Square, New York City, August 14 1945" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="V-J Day celebration in Times Square, New York City, August 14 1945" loading="eager">
           <div class="ss-caption">V-J Day celebration, Times Square, August 14, 1945 — Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Bundesarchiv_Bild_183-H26258%2C_Luftwaffe%2C_Heinkel_He_111_-_Zerstoerer.jpg/1200px-Bundesarchiv_Bild_183-H26258,_Luftwaffe,_Heinkel_He_111_-_Zerstoerer.jpg" alt="World War II aircraft over Europe" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="World War II aircraft over Europe" loading="eager">
           <div class="ss-caption">Luftwaffe aircraft over Europe, WWII — Bundesarchiv / Wikimedia Commons</div>
         </div>
       </div>
@@ -2256,19 +2270,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-1" data-count="4" aria-label="Axis Powers and Fascism images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Bundesarchiv_Bild_183-S33882%2C_Adolf_Hitler_retouched.jpg/600px-Bundesarchiv_Bild_183-S33882,_Adolf_Hitler_retouched.jpg" alt="Official portrait of Adolf Hitler, Nazi dictator of Germany" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Official portrait of Adolf Hitler, Nazi dictator of Germany" loading="eager">
             <div class="ss-caption">Adolf Hitler, Nazi dictator of Germany — Bundesarchiv / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mussolini_biografia.jpg/600px-Mussolini_biografia.jpg" alt="Benito Mussolini, fascist dictator of Italy" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Benito Mussolini, fascist dictator of Italy" loading="eager">
             <div class="ss-caption">Benito Mussolini, fascist dictator of Italy — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Bundesarchiv_Bild_183-1987-0922-500%2C_Berlin%2C_Unterzeichnung_Dreimächtepakt.jpg/900px-Bundesarchiv_Bild_183-1987-0922-500,_Berlin,_Unterzeichnung_Dreimächtepakt.jpg" alt="Signing of the Tripartite Pact in Berlin, September 27 1940, creating the Axis alliance" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Signing of the Tripartite Pact in Berlin, September 27 1940, creating the Axis alliance" loading="eager">
             <div class="ss-caption">Signing of the Tripartite Pact, Berlin, September 27, 1940 — Bundesarchiv / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Nuremberg_rally.jpg/900px-Nuremberg_rally.jpg" alt="Nazi Nuremberg rally, demonstrating the power of fascist political spectacle" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Nazi Nuremberg rally, demonstrating the power of fascist political spectacle" loading="eager">
             <div class="ss-caption">Nazi Nuremberg rally — Bundesarchiv / Wikimedia Commons</div>
           </div>
         </div>
@@ -2295,19 +2309,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-2" data-count="4" aria-label="Pre-war Holocaust context images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Nuremberg_laws.jpg/900px-Nuremberg_laws.jpg" alt="The Nuremberg Laws document, 1935, stripping German Jews of citizenship" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="The Nuremberg Laws document, 1935, stripping German Jews of citizenship" loading="eager">
             <div class="ss-caption">Nuremberg Laws document, 1935 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Kristallnacht_aftermath.jpg/900px-Kristallnacht_aftermath.jpg" alt="Aftermath of Kristallnacht, November 9 1938 — shattered storefront windows, no victims shown" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Aftermath of Kristallnacht, November 9 1938 — shattered storefront windows, no victims shown" loading="eager">
             <div class="ss-caption">Kristallnacht aftermath — shattered storefronts, November 9, 1938 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Bundesarchiv_Bild_183-B0527-0001-757%2C_N%C3%BCrnberg%2C_Reichsparteitag%2C_%22Reichskristallnacht%22.jpg/900px-Bundesarchiv_Bild_183-B0527-0001-757,_NÃ¼rnberg,_Reichsparteitag,_"Reichskristallnacht".jpg" alt="Nuremberg anti-Jewish rally poster, 1938, showing the political machinery of discrimination" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Nuremberg anti-Jewish rally poster, 1938, showing the political machinery of discrimination" loading="eager">
             <div class="ss-caption">Nazi anti-Jewish propaganda — Bundesarchiv / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/MS_St._Louis.jpg/900px-MS_St._Louis.jpg" alt="MS St. Louis, the ship carrying Jewish refugees turned away from the United States and Cuba in 1939" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="MS St. Louis, the ship carrying Jewish refugees turned away from the United States and Cuba in 1939" loading="eager">
             <div class="ss-caption">MS St. Louis — Jewish refugees turned away from the U.S. and Cuba, 1939 — Wikimedia Commons</div>
           </div>
         </div>
@@ -2333,19 +2347,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-3" data-count="4" aria-label="Pearl Harbor attack images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/USS_Arizona_BB-39_burning_crop.jpg/900px-USS_Arizona_BB-39_burning_crop.jpg" alt="USS Arizona burning at Pearl Harbor, December 7 1941, wide shot showing the attack" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="USS Arizona burning at Pearl Harbor, December 7 1941, wide shot showing the attack" loading="eager">
             <div class="ss-caption">USS Arizona burning at Pearl Harbor, December 7, 1941 — U.S. Navy / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Roosevelt_signs_war_declaration.jpg/900px-Roosevelt_signs_war_declaration.jpg" alt="President Franklin Roosevelt signing the declaration of war against Japan, December 8 1941" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="President Franklin Roosevelt signing the declaration of war against Japan, December 8 1941" loading="eager">
             <div class="ss-caption">FDR signs the declaration of war, December 8, 1941 — National Archives / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Mitsubishi_A6M2_-_Pearl_Harbor_0.jpg/900px-Mitsubishi_A6M2_-_Pearl_Harbor_0.jpg" alt="Japanese Zero aircraft during the Pearl Harbor attack, December 7 1941" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Japanese Zero aircraft during the Pearl Harbor attack, December 7 1941" loading="eager">
             <div class="ss-caption">Japanese Zero aircraft over Pearl Harbor, December 7, 1941 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Pearl_Harbor_-_looking_east_-_Dec_7_1941.jpg/900px-Pearl_Harbor_-_looking_east_-_Dec_7_1941.jpg" alt="Aerial photograph of Pearl Harbor during the Japanese attack, December 7 1941" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Aerial photograph of Pearl Harbor during the Japanese attack, December 7 1941" loading="eager">
             <div class="ss-caption">Aerial photograph of Pearl Harbor during the attack — U.S. Navy / Wikimedia Commons</div>
           </div>
         </div>
@@ -2384,19 +2398,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-4" data-count="4" aria-label="WWII Home Front images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/1/12/We_Can_Do_It%21.jpg" alt="We Can Do It! poster featuring Rosie the Riveter, iconic WWII home front image" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="We Can Do It! poster featuring Rosie the Riveter, iconic WWII home front image" loading="eager">
             <div class="ss-caption">"We Can Do It!" — Rosie the Riveter poster, 1943 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Victory_Garden_poster.jpg/700px-Victory_Garden_poster.jpg" alt="WWII Victory Garden propaganda poster encouraging Americans to grow their own food" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="WWII Victory Garden propaganda poster encouraging Americans to grow their own food" loading="eager">
             <div class="ss-caption">Victory Garden poster, WWII — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Rationing_WWII.jpg/900px-Rationing_WWII.jpg" alt="WWII rationing program poster reminding Americans to conserve food and resources" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="WWII rationing program poster reminding Americans to conserve food and resources" loading="eager">
             <div class="ss-caption">WWII rationing poster — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Women_workers_WWII_factory.jpg/900px-Women_workers_WWII_factory.jpg" alt="Women workers in a World War II defense factory, representing Rosie the Riveter" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Women workers in a World War II defense factory, representing Rosie the Riveter" loading="eager">
             <div class="ss-caption">Women workers in a WWII defense plant — National Archives</div>
           </div>
         </div>
@@ -2437,19 +2451,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-5" data-count="4" aria-label="Japanese American internment and 442nd Regiment images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Manzanar_War_Relocation_Center.jpg/900px-Manzanar_War_Relocation_Center.jpg" alt="Manzanar War Relocation Center, Japanese American internment camp in California" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Manzanar War Relocation Center, Japanese American internment camp in California" loading="eager">
             <div class="ss-caption">Manzanar War Relocation Center, California — National Archives / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/442nd_Regiment_WWII.jpg/900px-442nd_Regiment_WWII.jpg" alt="Soldiers of the 442nd Regimental Combat Team, most decorated unit in U.S. Army history" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Soldiers of the 442nd Regimental Combat Team, most decorated unit in U.S. Army history" loading="eager">
             <div class="ss-caption">442nd Regimental Combat Team — National Archives / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Executive_Order_9066.jpg/700px-Executive_Order_9066.jpg" alt="Executive Order 9066 document signed by President Roosevelt, authorizing Japanese American internment" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Executive Order 9066 document signed by President Roosevelt, authorizing Japanese American internment" loading="eager">
             <div class="ss-caption">Executive Order 9066, signed February 19, 1942 — National Archives</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/A._Philip_Randolph_1963.jpg/600px-A._Philip_Randolph_1963.jpg" alt="A. Philip Randolph, civil rights and labor leader who pressured FDR to desegregate defense industries" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="A. Philip Randolph, civil rights and labor leader who pressured FDR to desegregate defense industries" loading="eager">
             <div class="ss-caption">A. Philip Randolph, civil rights and labor leader — Library of Congress</div>
           </div>
         </div>
@@ -2490,19 +2504,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-6" data-count="4" aria-label="Pacific War images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Battle_of_Midway_Japanese_carrier_afire.jpg/900px-Battle_of_Midway_Japanese_carrier_afire.jpg" alt="Japanese aircraft carrier burning during the Battle of Midway, June 1942" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Japanese aircraft carrier burning during the Battle of Midway, June 1942" loading="eager">
             <div class="ss-caption">Japanese carrier on fire, Battle of Midway, June 1942 — U.S. Navy / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Douglas_MacArthur_as_General_of_the_Army.jpg/600px-Douglas_MacArthur_as_General_of_the_Army.jpg" alt="General Douglas MacArthur, Supreme Allied Commander in the Pacific" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="General Douglas MacArthur, Supreme Allied Commander in the Pacific" loading="eager">
             <div class="ss-caption">General Douglas MacArthur — U.S. Army / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Chester_W._Nimitz_as_CINCPAC.jpg/600px-Chester_W._Nimitz_as_CINCPAC.jpg" alt="Admiral Chester Nimitz, Commander of U.S. Pacific Fleet" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Admiral Chester Nimitz, Commander of U.S. Pacific Fleet" loading="eager">
             <div class="ss-caption">Admiral Chester Nimitz, CINCPAC — U.S. Navy / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Pacific_War_-_Island_Hopping.jpg/900px-Pacific_War_-_Island_Hopping.jpg" alt="Map showing the island hopping strategy across the Pacific toward Japan" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Map showing the island hopping strategy across the Pacific toward Japan" loading="eager">
             <div class="ss-caption">Island hopping — Allied advance across the Pacific, 1942–1945 — Wikimedia Commons</div>
           </div>
         </div>
@@ -2529,15 +2543,15 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-7" data-count="3" aria-label="Atomic bomb images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Trinity_shot_color.jpg/900px-Trinity_shot_color.jpg" alt="The Trinity nuclear test explosion in New Mexico, July 16 1945, the first atomic bomb detonation" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="The Trinity nuclear test explosion in New Mexico, July 16 1945, the first atomic bomb detonation" loading="eager">
             <div class="ss-caption">Trinity nuclear test, New Mexico, July 16, 1945 — U.S. Department of Energy</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Atomic_bombing_of_Japan.jpg/900px-Atomic_bombing_of_Japan.jpg" alt="Mushroom cloud over Nagasaki, Japan, following the atomic bomb dropped on August 9 1945" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Mushroom cloud over Nagasaki, Japan, following the atomic bomb dropped on August 9 1945" loading="eager">
             <div class="ss-caption">Atomic bomb mushroom cloud, Nagasaki, August 9, 1945 — U.S. Army Air Forces</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Julius_Robert_Oppenheimer.jpg/600px-Julius_Robert_Oppenheimer.jpg" alt="J. Robert Oppenheimer, scientific director of the Manhattan Project" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="J. Robert Oppenheimer, scientific director of the Manhattan Project" loading="eager">
             <div class="ss-caption">J. Robert Oppenheimer, scientific director of the Manhattan Project — Wikimedia Commons</div>
           </div>
         </div>
@@ -2562,15 +2576,15 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c3-8" data-count="3" aria-label="War's end and aftermath images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Yalta_Conference_%281945%29_Churchill%2C_Roosevelt%2C_Stalin.jpg/900px-Yalta_Conference_(1945)_Churchill,_Roosevelt,_Stalin.jpg" alt="Yalta Conference, February 1945 — Churchill, Roosevelt, and Stalin, the Big Three" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Yalta Conference, February 1945 — Churchill, Roosevelt, and Stalin, the Big Three" loading="eager">
             <div class="ss-caption">Yalta Conference, February 1945 — Churchill, Roosevelt, Stalin — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Nuremberg_Trials.jpg/900px-Nuremberg_Trials.jpg" alt="Nuremberg Trials courtroom, 1945–1946, the first international war crimes tribunal" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Nuremberg Trials courtroom, 1945–1946, the first international war crimes tribunal" loading="eager">
             <div class="ss-caption">Nuremberg Trials courtroom, 1945–46 — National Archives / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Surrender_of_Japan_-_USS_Missouri.jpg/900px-Surrender_of_Japan_-_USS_Missouri.jpg" alt="Japanese surrender ceremony aboard the USS Missouri, September 2 1945, ending World War II" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Japanese surrender ceremony aboard the USS Missouri, September 2 1945, ending World War II" loading="eager">
             <div class="ss-caption">Japanese surrender ceremony, USS Missouri, September 2, 1945 — National Archives</div>
           </div>
         </div>
@@ -2607,15 +2621,15 @@ body {
     <div class="img-slideshow ss-hero" id="ss-h4" data-count="3" aria-label="Chapter 4 historical images">
       <div class="ss-track">
         <div class="ss-slide ss-active">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Berlin_Wall_1961-11-20.jpg/1200px-Berlin_Wall_1961-11-20.jpg" alt="The Berlin Wall with guard towers, November 1961" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="The Berlin Wall with guard towers, November 1961" loading="eager">
           <div class="ss-caption">Berlin Wall with guard towers, November 1961 — Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/1200px-Sputnik_asm.jpg" alt="Sputnik 1, the world's first artificial satellite, launched October 1957" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="Sputnik 1, the world's first artificial satellite, launched October 1957" loading="eager">
           <div class="ss-caption">Sputnik 1, the world's first artificial satellite, 1957 — NASA / Wikimedia Commons</div>
         </div>
         <div class="ss-slide">
-          <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Vietnam_war_refugee_boat.jpg/1200px-Vietnam_war_refugee_boat.jpg" alt="U.S. military helicopter over Vietnam during the Vietnam War" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+          <img class="ss-img" src="" alt="U.S. military helicopter over Vietnam during the Vietnam War" loading="eager">
           <div class="ss-caption">Vietnam War era — National Archives</div>
         </div>
       </div>
@@ -2701,19 +2715,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-1" data-count="4" aria-label="Western Alliance Cold War images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Harry-truman.jpg/600px-Harry-truman.jpg" alt="Official portrait of President Harry S. Truman" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Official portrait of President Harry S. Truman" loading="eager">
             <div class="ss-caption">President Harry S. Truman — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/C-54landingattemplehof.jpg/900px-C-54landingattemplehof.jpg" alt="American C-54 cargo plane landing at Tempelhof Airport during the Berlin Airlift, 1948" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="American C-54 cargo plane landing at Tempelhof Airport during the Berlin Airlift, 1948" loading="eager">
             <div class="ss-caption">Berlin Airlift — C-54 landing at Tempelhof Airport, 1948 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Marshall_Plan_aid_to_Europe_map.jpg/900px-Marshall_Plan_aid_to_Europe_map.jpg" alt="Map showing Marshall Plan aid to Western Europe, 1948–1952" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Map showing Marshall Plan aid to Western Europe, 1948–1952" loading="eager">
             <div class="ss-caption">Marshall Plan aid to Europe, 1948–1952 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/NATO_flag.svg/900px-NATO_flag.svg" alt="NATO founding ceremony, 1949 — establishing the Western military alliance" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="NATO founding ceremony, 1949 — establishing the Western military alliance" loading="eager">
             <div class="ss-caption">NATO founding, April 4, 1949 — Wikimedia Commons</div>
           </div>
         </div>
@@ -2754,19 +2768,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-2" data-count="4" aria-label="Red Scare and McCarthyism images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Joseph_McCarthy.jpg/600px-Joseph_McCarthy.jpg" alt="Senator Joseph McCarthy at a Senate hearing, c. 1954" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Senator Joseph McCarthy at a Senate hearing, c. 1954" loading="eager">
             <div class="ss-caption">Senator Joseph McCarthy at a Senate hearing — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Army-McCarthy_hearing.jpg/900px-Army-McCarthy_hearing.jpg" alt="Army-McCarthy hearings, 1954, the televised hearings that ended McCarthy's influence" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Army-McCarthy hearings, 1954, the televised hearings that ended McCarthy's influence" loading="eager">
             <div class="ss-caption">Army-McCarthy hearings, 1954 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/HUAC_hearing.jpg/900px-HUAC_hearing.jpg" alt="House Un-American Activities Committee hearing during the Red Scare" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="House Un-American Activities Committee hearing during the Red Scare" loading="eager">
             <div class="ss-caption">HUAC hearing — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Ethel_and_Julius_Rosenberg.jpg/700px-Ethel_and_Julius_Rosenberg.jpg" alt="Ethel and Julius Rosenberg, convicted of passing atomic secrets to the Soviet Union" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Ethel and Julius Rosenberg, convicted of passing atomic secrets to the Soviet Union" loading="eager">
             <div class="ss-caption">Ethel and Julius Rosenberg, executed 1953 — Wikimedia Commons</div>
           </div>
         </div>
@@ -2799,15 +2813,15 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-3" data-count="3" aria-label="Sputnik and U-2 Incident images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/900px-Sputnik_asm.jpg" alt="Sputnik 1, the world's first artificial satellite, launched by the Soviet Union on October 4, 1957" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Sputnik 1, the world's first artificial satellite, launched by the Soviet Union on October 4, 1957" loading="eager">
             <div class="ss-caption">Sputnik 1, the world's first artificial satellite, October 4, 1957 — NASA / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Lockheed_U-2.jpg/900px-Lockheed_U-2.jpg" alt="Lockheed U-2 spy plane, used by the CIA for reconnaissance flights over the Soviet Union" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Lockheed U-2 spy plane, used by the CIA for reconnaissance flights over the Soviet Union" loading="eager">
             <div class="ss-caption">Lockheed U-2 spy plane — U.S. Air Force / Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Francis_Gary_Powers.jpg/600px-Francis_Gary_Powers.jpg" alt="Francis Gary Powers, CIA U-2 pilot shot down over the Soviet Union in 1960" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Francis Gary Powers, CIA U-2 pilot shot down over the Soviet Union in 1960" loading="eager">
             <div class="ss-caption">Francis Gary Powers, CIA U-2 pilot — Wikimedia Commons</div>
           </div>
         </div>
@@ -2832,19 +2846,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-4" data-count="4" aria-label="Vietnam background and origins images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Ho_Chi_Minh_1946.jpg/600px-Ho_Chi_Minh_1946.jpg" alt="Ho Chi Minh, Vietnamese nationalist and communist leader, photographed in 1946" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Ho Chi Minh, Vietnamese nationalist and communist leader, photographed in 1946" loading="eager">
             <div class="ss-caption">Ho Chi Minh, 1946 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Dien_Bien_Phu_1954.jpg/900px-Dien_Bien_Phu_1954.jpg" alt="Battle of Dien Bien Phu, 1954 — the decisive French defeat that ended French rule in Vietnam" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Battle of Dien Bien Phu, 1954 — the decisive French defeat that ended French rule in Vietnam" loading="eager">
             <div class="ss-caption">Battle of Dien Bien Phu, 1954 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Geneva_Accords_1954.jpg/900px-Geneva_Accords_1954.jpg" alt="Geneva Accords signing ceremony, 1954, dividing Vietnam at the 17th parallel" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Geneva Accords signing ceremony, 1954, dividing Vietnam at the 17th parallel" loading="eager">
             <div class="ss-caption">Geneva Accords signing, 1954 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Vietnam_partition_1954.jpg/600px-Vietnam_partition_1954.jpg" alt="Map showing Vietnam divided at the 17th parallel following the 1954 Geneva Accords" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Map showing Vietnam divided at the 17th parallel following the 1954 Geneva Accords" loading="eager">
             <div class="ss-caption">Vietnam divided at the 17th parallel, 1954 — Wikimedia Commons</div>
           </div>
         </div>
@@ -2870,19 +2884,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-5" data-count="4" aria-label="Vietnam War escalation images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/LBJ_signs_Gulf_of_Tonkin_resolution.jpg/900px-LBJ_signs_Gulf_of_Tonkin_resolution.jpg" alt="President Lyndon Johnson signing the Gulf of Tonkin Resolution, August 1964" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="President Lyndon Johnson signing the Gulf of Tonkin Resolution, August 1964" loading="eager">
             <div class="ss-caption">LBJ signs the Gulf of Tonkin Resolution, August 1964 — LBJ Library</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Marines_landing_Da_Nang_1965.jpg/900px-Marines_landing_Da_Nang_1965.jpg" alt="U.S. Marines landing at Da Nang, South Vietnam, March 1965, the first major U.S. ground troops" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="U.S. Marines landing at Da Nang, South Vietnam, March 1965, the first major U.S. ground troops" loading="eager">
             <div class="ss-caption">U.S. Marines landing at Da Nang, March 1965 — National Archives</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Ho_Chi_Minh_trail_map.jpg/700px-Ho_Chi_Minh_trail_map.jpg" alt="Map of the Ho Chi Minh Trail supply network running through Laos and Cambodia" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Map of the Ho Chi Minh Trail supply network running through Laos and Cambodia" loading="eager">
             <div class="ss-caption">Ho Chi Minh Trail supply network — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robert_McNamara_official_portrait.jpg/600px-Robert_McNamara_official_portrait.jpg" alt="Robert McNamara, U.S. Secretary of Defense and architect of Vietnam War escalation" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Robert McNamara, U.S. Secretary of Defense and architect of Vietnam War escalation" loading="eager">
             <div class="ss-caption">Robert McNamara, Secretary of Defense — U.S. Department of Defense</div>
           </div>
         </div>
@@ -2923,19 +2937,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-6" data-count="4" aria-label="Living Room War and antiwar movement images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Walter_Cronkite_1981.jpg/600px-Walter_Cronkite_1981.jpg" alt="Walter Cronkite, CBS News anchor whose Vietnam broadcast shifted American public opinion" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Walter Cronkite, CBS News anchor whose Vietnam broadcast shifted American public opinion" loading="eager">
             <div class="ss-caption">Walter Cronkite — CBS News broadcast anchor who turned against the war — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Vietnam_War_protest_1967.jpg/900px-Vietnam_War_protest_1967.jpg" alt="Vietnam War protest march in Washington D.C., 1967" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Vietnam War protest march in Washington D.C., 1967" loading="eager">
             <div class="ss-caption">Vietnam War protest march, Washington D.C., 1967 — Library of Congress</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Antiwar_demonstration_Washington_DC_1969.jpg/900px-Antiwar_demonstration_Washington_DC_1969.jpg" alt="Massive antiwar demonstration in Washington D.C., November 1969" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Massive antiwar demonstration in Washington D.C., November 1969" loading="eager">
             <div class="ss-caption">Antiwar demonstration, Washington D.C., November 1969 — National Archives</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lyndon_B._Johnson%2C_photo_portrait%2C_leaning_on_chair.jpg/600px-Lyndon_B._Johnson,_photo_portrait,_leaning_on_chair.jpg" alt="President Lyndon Johnson, who escalated U.S. involvement in Vietnam" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="President Lyndon Johnson, who escalated U.S. involvement in Vietnam" loading="eager">
             <div class="ss-caption">President Lyndon B. Johnson — LBJ Library</div>
           </div>
         </div>
@@ -3011,19 +3025,19 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-7" data-count="4" aria-label="Nixon withdrawal and aftermath images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Nixon_with_Leonid_Brezhnev_1973.jpg/900px-Nixon_with_Leonid_Brezhnev_1973.jpg" alt="President Richard Nixon, who promised to end the Vietnam War" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="President Richard Nixon, who promised to end the Vietnam War" loading="eager">
             <div class="ss-caption">President Richard Nixon — National Archives</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Kent_State_massacre.jpg/900px-Kent_State_massacre.jpg" alt="Kent State University protest, May 4 1970, before National Guard fired on students" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Kent State University protest, May 4 1970, before National Guard fired on students" loading="eager">
             <div class="ss-caption">Kent State University protest, May 4, 1970 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/PentagonPapers.jpg/900px-PentagonPapers.jpg" alt="New York Times front page featuring the Pentagon Papers, June 1971" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="New York Times front page featuring the Pentagon Papers, June 1971" loading="eager">
             <div class="ss-caption">Pentagon Papers — New York Times front page, June 1971 — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Last_American_helicopter_leaving_Saigon_1975.jpg/900px-Last_American_helicopter_leaving_Saigon_1975.jpg" alt="Last American helicopters evacuating from the rooftop in Saigon, April 1975, Fall of Saigon" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Last American helicopters evacuating from the rooftop in Saigon, April 1975, Fall of Saigon" loading="eager">
             <div class="ss-caption">Fall of Saigon — last helicopters leaving, April 29, 1975 — U.S. Army / Wikimedia Commons</div>
           </div>
         </div>
@@ -3042,11 +3056,11 @@ body {
       <div class="img-slideshow ss-inline" id="ss-c4-8" data-count="2" aria-label="Vietnam legacy images">
         <div class="ss-track">
           <div class="ss-slide ss-active">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Vietnam_Veterans_Memorial_reflecting_pool_reflection.jpg/900px-Vietnam_Veterans_Memorial_reflecting_pool_reflection.jpg" alt="Vietnam Veterans Memorial Wall in Washington D.C., reflecting pool" loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Vietnam Veterans Memorial Wall in Washington D.C., reflecting pool" loading="eager">
             <div class="ss-caption">Vietnam Veterans Memorial, Washington D.C. — Wikimedia Commons</div>
           </div>
           <div class="ss-slide">
-            <img class="ss-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Vietnam_War_Memorial.jpg/900px-Vietnam_War_Memorial.jpg" alt="Visitors at the Vietnam Veterans Memorial Wall in Washington D.C." loading="eager" onerror="this.closest('.ss-slide').classList.add('ss-failed')">
+            <img class="ss-img" src="" alt="Visitors at the Vietnam Veterans Memorial Wall in Washington D.C." loading="eager">
             <div class="ss-caption">Vietnam Veterans Memorial — names of 58,000 Americans — Wikimedia Commons</div>
           </div>
         </div>
@@ -4469,33 +4483,298 @@ SS_MOBILE.addEventListener('change', () => {
 ssInit();
 
 /* ============================================================
-   TOOLTIP THUMBNAIL DATA
+   DYNAMIC WIKIPEDIA IMAGE LOADING
    ============================================================ */
-const TOOLTIP_THUMBS = {
-  /* Chapter 1 */
-  'liliuokalani':         'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/QueenLiliuokalani.jpg/220px-QueenLiliuokalani.jpg',
-  'uss-maine':            'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/USS_Maine_1898.jpg/220px-USS_Maine_1898.jpg',
-  'rough-riders':         'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/The_Rough_Riders_San_Juan_Hill.jpg/220px-The_Rough_Riders_San_Juan_Hill.jpg',
-  'emilio-aguinaldo':     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Emilio_Aguinaldo_y_Famy.jpg/220px-Emilio_Aguinaldo_y_Famy.jpg',
-  /* Chapter 2 */
-  'franz-ferdinand':      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Erzherzog_Franz_Ferdinand_von_%C3%96sterreich_Este.jpg/220px-Erzherzog_Franz_Ferdinand_von_Ãsterreich_Este.jpg',
-  'lusitania':            'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/RMS_Lusitania.jpg/220px-RMS_Lusitania.jpg',
-  'zimmermann-note':      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Zimmermann_telegram.jpg/220px-Zimmermann_telegram.jpg',
-  'general-pershing':     'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/BlackJack_Pershing.jpg/220px-BlackJack_Pershing.jpg',
-  'alvin-york':           'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Sergeant_Alvin_C._York.jpg/220px-Sergeant_Alvin_C._York.jpg',
-  /* Chapter 3 */
-  'adolf-hitler':         'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Bundesarchiv_Bild_183-S33882%2C_Adolf_Hitler_retouched.jpg/220px-Bundesarchiv_Bild_183-S33882,_Adolf_Hitler_retouched.jpg',
-  'benito-mussolini':     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mussolini_biografia.jpg/220px-Mussolini_biografia.jpg',
-  'rosie-riveter':        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/We_Can_Do_It%21.jpg/220px-We_Can_Do_It!.jpg',
-  '442nd-regiment':       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/442nd_Regiment_WWII.jpg/220px-442nd_Regiment_WWII.jpg',
-  'oppenheimer':          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Julius_Robert_Oppenheimer.jpg/220px-Julius_Robert_Oppenheimer.jpg',
-  /* Chapter 4 */
-  'ho-chi-minh':          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Ho_Chi_Minh_1946.jpg/220px-Ho_Chi_Minh_1946.jpg',
-  'sputnik':              'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/220px-Sputnik_asm.jpg',
-  'joseph-mccarthy':      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Joseph_McCarthy.jpg/220px-Joseph_McCarthy.jpg',
-  'berlin-airlift':       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/C-54landingattemplehof.jpg/220px-C-54landingattemplehof.jpg',
-  'kent-state':           'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Kent_State_massacre.jpg/220px-Kent_State_massacre.jpg',
+
+const wikiImageCache = {};
+
+async function getWikiImage(articleTitle, fallbackSearch) {
+  fallbackSearch = fallbackSearch || null;
+  if (wikiImageCache[articleTitle]) return wikiImageCache[articleTitle];
+  try {
+    const encoded = encodeURIComponent(articleTitle.replace(/ /g, '_'));
+    const res = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encoded);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const url = (data && data.thumbnail && data.thumbnail.source) ? data.thumbnail.source : null;
+    if (url) { wikiImageCache[articleTitle] = url; return url; }
+  } catch (e) { /* fall through to fallback */ }
+  if (fallbackSearch) {
+    const fallback = 'https://source.unsplash.com/800x450/?' + encodeURIComponent(fallbackSearch);
+    wikiImageCache[articleTitle] = fallback;
+    return fallback;
+  }
+  return null;
+}
+
+/* Mapping: slideshow ID -> array of slide specs.
+   type:'wiki' fetches Wikipedia REST API thumbnail.
+   type:'unsplash' uses Unsplash source URL.
+   null means hide that slot (4th slide intentionally empty). */
+const SLIDESHOW_DATA = {
+  /* ── Hero Slideshows ──────────────────────────── */
+  'ss-h1': [
+    {type:'wiki', article:'Imperialism',          caption:'The Age of Empire — industrial powers carving up the globe'},
+    {type:'wiki', article:'Spanish\u2013American War', caption:'The Spanish-American War, 1898 — America\'s imperial debut'},
+    {type:'wiki', article:'New Imperialism',       caption:'New Imperialism — the ideology of expansion and dominance'}
+  ],
+  'ss-h2': [
+    {type:'wiki',    article:'World War I',       caption:'The Great War — 20 million dead'},
+    {type:'wiki',    article:'Trench warfare',    caption:'The Western Front — miles of trenches and stalemate'},
+    {type:'unsplash',search:'world war one battlefield landscape historic', caption:'The scarred landscape of the Western Front'}
+  ],
+  'ss-h3': [
+    {type:'wiki', article:'World War II',          caption:'World War II — the deadliest conflict in human history'},
+    {type:'wiki', article:'Normandy landings',     caption:'D-Day, June 6, 1944 — the turning point in Europe'},
+    {type:'wiki', article:'V-J Day in Times Square', caption:'V-J Day, August 1945 — the war finally ends'}
+  ],
+  'ss-h4': [
+    {type:'wiki',    article:'Berlin Wall',       caption:'The Berlin Wall — the Cold War made concrete'},
+    {type:'wiki',    article:'Cold War',          caption:'The Cold War — fought everywhere except between the two superpowers directly'},
+    {type:'unsplash',search:'vietnam war soldiers jungle historic', caption:'Vietnam — America\'s longest and most divisive war'}
+  ],
+
+  /* ── Chapter 1: Imperialism ──────────────────── */
+  'ss-c1-1': [
+    {type:'wiki',    article:'Scramble for Africa', caption:'Scramble for Africa — the colonial carve-up of an entire continent'},
+    {type:'wiki',    article:'Alfred Thayer Mahan', caption:'Alfred T. Mahan — the man who argued sea power was world power'},
+    {type:'wiki',    article:'Imperialism',          caption:'European powers competing for territory and resources'},
+    {type:'unsplash',search:'colonial trade ship sailing 1800s historical', caption:'Colonial trade routes that drove the imperial economy'}
+  ],
+  'ss-c1-2': [
+    {type:'wiki', article:'Liliuokalani',   caption:'Queen Liliuokalani — Hawaii\'s last monarch'},
+    {type:'wiki', article:'Iolani Palace',  caption:'Iolani Palace, Honolulu — seat of the Hawaiian Kingdom'},
+    {type:'wiki', article:'Sanford B. Dole', caption:'Sanford B. Dole — first governor of the Territory of Hawaii'}
+  ],
+  'ss-c1-3': [
+    {type:'wiki', article:'USS Maine (ACR-1)',  caption:'The USS Maine — its explosion in Havana Harbor ignited the war'},
+    {type:'wiki', article:'Yellow journalism',  caption:'Yellow journalism — Hearst and Pulitzer sold papers by selling outrage'},
+    {type:'wiki', article:'Valeriano Weyler',   caption:'General Valeriano Weyler — "The Butcher" of Cuba'},
+    {type:'wiki', article:'Jos\u00e9 Mart\u00ed', caption:'Jos\u00e9 Mart\u00ed — Cuban independence leader'}
+  ],
+  'ss-c1-4': [
+    {type:'wiki', article:'George Dewey',           caption:'Commodore George Dewey — destroyed the Spanish fleet at Manila Bay'},
+    {type:'wiki', article:'Rough Riders',            caption:'The Rough Riders — Theodore Roosevelt\'s volunteer cavalry'},
+    {type:'wiki', article:'Emilio Aguinaldo',        caption:'Emilio Aguinaldo — Filipino independence leader'},
+    {type:'wiki', article:'Philippine\u2013American War', caption:'The Philippine-American War — the empire America won came with a war it didn\'t expect'}
+  ],
+
+  /* ── Chapter 2: WWI ──────────────────────────── */
+  'ss-c2-1': [
+    {type:'wiki', article:'Militarism',            caption:'Militarism — nations glorifying military power (M)'},
+    {type:'wiki', article:'Triple Alliance (1882)',  caption:'The Alliance System — one nation\'s war became everyone\'s war (A)'},
+    {type:'wiki', article:'New Imperialism',        caption:'Imperialism — colonial competition created constant friction (I)'},
+    {type:'wiki', article:'Nationalism',            caption:'Nationalism — ethnic pride that refused compromise (N)'}
+  ],
+  'ss-c2-2': [
+    {type:'wiki', article:'Archduke Franz Ferdinand of Austria', caption:'Archduke Franz Ferdinand — his assassination lit the match'},
+    {type:'wiki', article:'Gavrilo Princip',                     caption:'Gavrilo Princip — the assassin who accidentally started a world war'},
+    {type:'wiki', article:'Assassination of Archduke Franz Ferdinand', caption:'Sarajevo, June 28, 1914 — the day everything changed'}
+  ],
+  'ss-c2-3': [
+    {type:'wiki', article:'Trench warfare',                    caption:'Trench warfare — mud, rats, gas, and stalemate for four years'},
+    {type:'wiki', article:'Chemical warfare in World War I',   caption:'Poison gas — one of WWI\'s terrifying new weapons'},
+    {type:'wiki', article:'Tank',                              caption:'The tank — introduced in WWI, changed warfare forever'},
+    {type:'wiki', article:'Shell shock',                       caption:'Shell shock — the invisible wounds of modern war'}
+  ],
+  'ss-c2-4': [
+    {type:'wiki', article:'RMS Lusitania',     caption:'RMS Lusitania — sunk by a German U-boat, 1,198 killed'},
+    {type:'wiki', article:'Zimmermann Telegram', caption:'The Zimmermann Note — Germany\'s secret proposal to Mexico'},
+    {type:'wiki', article:'U-boat',            caption:'German U-boats — the underwater threat that brought America in'},
+    {type:'wiki', article:'Woodrow Wilson',    caption:'President Woodrow Wilson — asked Congress for war on April 6, 1917'}
+  ],
+  'ss-c2-5': [
+    {type:'wiki', article:'John J. Pershing',            caption:'General Pershing — commander of the American Expeditionary Forces'},
+    {type:'wiki', article:'Alvin York',                  caption:'Sergeant Alvin York — captured 132 German soldiers singlehandedly'},
+    {type:'wiki', article:'American Expeditionary Forces', caption:'American troops arriving in France, 1917'}
+  ],
+  'ss-c2-6': [
+    {type:'wiki', article:'Paris Peace Conference, 1919', caption:'The Paris Peace Conference — where Wilson\'s idealism met European realpolitik'},
+    {type:'wiki', article:'Treaty of Versailles',         caption:'The Treaty of Versailles — it humiliated Germany and planted seeds for WWII'},
+    {type:'wiki', article:'League of Nations',            caption:'The League of Nations — a great idea the U.S. Senate killed'}
+  ],
+
+  /* ── Chapter 3: WWII ─────────────────────────── */
+  'ss-c3-1': [
+    {type:'wiki', article:'Adolf Hitler',    caption:'Adolf Hitler — Nazi dictator of Germany'},
+    {type:'wiki', article:'Benito Mussolini',caption:'Benito Mussolini — fascist dictator of Italy'},
+    {type:'wiki', article:'Tripartite Pact', caption:'The Tripartite Pact, 1940 — the Axis alliance made official'},
+    {type:'wiki', article:'Fascism',         caption:'Fascism — the ideology that weaponized resentment'}
+  ],
+  'ss-c3-2': [
+    {type:'wiki', article:'Nuremberg Laws', caption:'The Nuremberg Laws, 1935 — discrimination codified into law'},
+    {type:'wiki', article:'Kristallnacht',  caption:'Kristallnacht, November 9, 1938 — Night of Broken Glass'},
+    {type:'wiki', article:'MS St. Louis',   caption:'The MS St. Louis — Jewish refugees turned away from American shores'},
+    {type:'wiki', article:'Kindertransport', caption:'Kindertransport — nearly 10,000 Jewish children rescued from Nazi-controlled territories'}
+  ],
+  'ss-c3-3': [
+    {type:'wiki', article:'Attack on Pearl Harbor', caption:'Pearl Harbor, December 7, 1941 — "a date which will live in infamy"'},
+    {type:'wiki', article:'USS Arizona (BB-39)',     caption:'The USS Arizona — sunk at Pearl Harbor, now a national memorial'},
+    {type:'wiki', article:'Hideki Tojo',             caption:'Hideki Tojo — the Japanese Prime Minister who ordered the attack'},
+    {type:'wiki', article:'Isoroku Yamamoto',        caption:'Admiral Yamamoto — planned the Pearl Harbor attack'}
+  ],
+  'ss-c3-4': [
+    {type:'wiki', article:'We Can Do It!',     caption:'Rosie the Riveter — the face of women\'s wartime workforce'},
+    {type:'wiki', article:'War Production Board', caption:'The War Production Board — America\'s industrial mobilization'},
+    {type:'wiki', article:'Victory garden',    caption:'Victory Gardens — backyards feeding the war effort'},
+    {type:'wiki', article:"Women's Army Corps", caption:"Women's Auxiliary Army Corps — women in military service"}
+  ],
+  'ss-c3-5': [
+    {type:'wiki', article:'Japanese American internment', caption:'Japanese American internment — 120,000 imprisoned without evidence'},
+    {type:'wiki', article:'442nd Infantry Regiment',      caption:'The 442nd Regiment — most decorated unit in U.S. Army history'},
+    {type:'wiki', article:'A. Philip Randolph',           caption:'A. Philip Randolph — threatened a march and got results'},
+    {type:'wiki', article:'Double V campaign',            caption:'The Double V Campaign — victory abroad and victory over racism at home'}
+  ],
+  'ss-c3-6': [
+    {type:'wiki', article:'Battle of Midway',   caption:'Battle of Midway, June 1942 — the Pacific War\'s turning point'},
+    {type:'wiki', article:'Douglas MacArthur',  caption:'General Douglas MacArthur — Supreme Allied Commander, Pacific'},
+    {type:'wiki', article:'Chester W. Nimitz',  caption:'Admiral Chester Nimitz — the naval commander who ambushed Japan at Midway'},
+    {type:'wiki', article:'Island hopping',     caption:'Island hopping — the strategy that drove Japan back across the Pacific'}
+  ],
+  'ss-c3-7': [
+    {type:'wiki', article:'J. Robert Oppenheimer', caption:'J. Robert Oppenheimer — "Now I am become Death"'},
+    {type:'wiki', article:'Manhattan Project',     caption:'The Manhattan Project — built in secret, changed the world'},
+    {type:'wiki', article:'Atomic bombings of Hiroshima and Nagasaki', caption:'August 6 & 9, 1945 — the war ended; the nuclear age began'}
+  ],
+  'ss-c3-8': [
+    {type:'wiki', article:'Yalta Conference', caption:'The Yalta Conference — where the postwar world was divided'},
+    {type:'wiki', article:'Nuremberg trials',  caption:'The Nuremberg Trials — justice served; a precedent for international law'},
+    {type:'wiki', article:'Occupation of Japan', caption:'The Occupation of Japan — turning an enemy into an ally'}
+  ],
+
+  /* ── Chapter 4: Cold War & Vietnam ───────────── */
+  'ss-c4-1': [
+    {type:'wiki', article:'Harry S. Truman', caption:'President Truman — his doctrine pledged to resist communist expansion'},
+    {type:'wiki', article:'Berlin Blockade', caption:'The Berlin Airlift — 277,000 flights; the Soviets blinked first'},
+    {type:'wiki', article:'Marshall Plan',   caption:'The Marshall Plan — $13 billion to rebuild Western Europe'},
+    {type:'wiki', article:'NATO',            caption:'NATO founding, 1949 — the defensive wall of the free world'}
+  ],
+  'ss-c4-2': [
+    {type:'wiki', article:'Joseph McCarthy',                     caption:'Senator Joseph McCarthy — McCarthyism\'s most notorious practitioner'},
+    {type:'wiki', article:'House Un-American Activities Committee', caption:'HUAC hearings — "Are you now or have you ever been..."'},
+    {type:'wiki', article:'Hollywood blacklist',                 caption:'The Hollywood Blacklist — being named meant career over'},
+    {type:'wiki', article:'Julius and Ethel Rosenberg',         caption:'The Rosenbergs — executed 1953 for passing atomic secrets to the Soviets'}
+  ],
+  'ss-c4-3': [
+    {type:'wiki', article:'Sputnik 1',          caption:'Sputnik, October 1957 — the beep that started the space race'},
+    {type:'wiki', article:'Lockheed U-2',        caption:'The U-2 spy plane — shot down over the USSR in 1960'},
+    {type:'wiki', article:'Francis Gary Powers', caption:'Francis Gary Powers — the pilot whose capture wrecked a superpower summit'}
+  ],
+  'ss-c4-4': [
+    {type:'wiki', article:'Ho Chi Minh',            caption:'Ho Chi Minh — beat France, then America, then unified Vietnam'},
+    {type:'wiki', article:'Battle of Dien Bien Phu', caption:'Dien Bien Phu, 1954 — the battle that ended French Indochina'},
+    {type:'wiki', article:'Geneva Accords',          caption:'The Geneva Accords — temporary division that became permanent'},
+    {type:'wiki', article:'Ngo Dinh Diem',           caption:'Ngo Dinh Diem — America\'s corrupt, unpopular South Vietnamese ally'}
+  ],
+  'ss-c4-5': [
+    {type:'wiki', article:'Gulf of Tonkin Resolution', caption:'The Tonkin Gulf Resolution — a blank check for escalation'},
+    {type:'wiki', article:'Robert McNamara',           caption:'Robert McNamara — the man who ran the war by spreadsheet'},
+    {type:'wiki', article:'William Westmoreland',      caption:'General Westmoreland — said we were winning. We weren\'t.'},
+    {type:'wiki', article:'Ho Chi Minh trail',         caption:'The Ho Chi Minh Trail — the supply line the U.S. could never cut'}
+  ],
+  'ss-c4-6': [
+    {type:'wiki', article:'Opposition to the Vietnam War',    caption:'The antiwar movement — Doves vs. Hawks in American living rooms'},
+    {type:'wiki', article:'Students for a Democratic Society', caption:'Students for a Democratic Society — the organizational spine of campus protest'},
+    {type:'wiki', article:'Kent State shootings',             caption:'Kent State, May 4, 1970 — four students killed; the war came home'},
+    {type:'wiki', article:'Pentagon Papers',                  caption:'The Pentagon Papers — the government lied; Ellsberg proved it'}
+  ],
+  'ss-c4-7': [
+    {type:'wiki', article:'Richard Nixon',     caption:'Richard Nixon — won on peace, expanded the war first, then left'},
+    {type:'wiki', article:'Kent State shootings', caption:'Kent State, May 4, 1970 — four students killed; the war came home'},
+    {type:'wiki', article:'Vietnamization',    caption:'Vietnamization — Nixon\'s plan to shift the fighting to South Vietnamese forces'},
+    {type:'wiki', article:'Pentagon Papers',   caption:'The Pentagon Papers — Daniel Ellsberg revealed the government\'s deception'}
+  ],
+  'ss-c4-8': [
+    {type:'wiki', article:'Fall of Saigon',          caption:'Saigon falls, April 30, 1975 — the last helicopters leave'},
+    {type:'wiki', article:'Vietnam Veterans Memorial', caption:'The Vietnam Veterans Memorial — 58,000 names on black granite'}
+  ]
 };
+
+/* Tooltip thumbnails: term data-term key -> Wikipedia article title */
+const TOOLTIP_WIKI_ARTICLES = {
+  'liliuokalani':     'Liliuokalani',
+  'uss-maine':        'USS Maine (ACR-1)',
+  'rough-riders':     'Rough Riders',
+  'emilio-aguinaldo': 'Emilio Aguinaldo',
+  'franz-ferdinand':  'Archduke Franz Ferdinand of Austria',
+  'lusitania':        'RMS Lusitania',
+  'zimmermann-note':  'Zimmermann Telegram',
+  'general-pershing': 'John J. Pershing',
+  'alvin-york':       'Alvin York',
+  'adolf-hitler':     'Adolf Hitler',
+  'benito-mussolini': 'Benito Mussolini',
+  'rosie-riveter':    'We Can Do It!',
+  '442nd-regiment':   '442nd Infantry Regiment',
+  'oppenheimer':      'J. Robert Oppenheimer',
+  'uss-arizona':      'USS Arizona (BB-39)',
+  'ho-chi-minh':      'Ho Chi Minh',
+  'sputnik':          'Sputnik 1',
+  'joseph-mccarthy':  'Joseph McCarthy',
+  'berlin-airlift':   'Berlin Blockade',
+  'berlin-wall':      'Berlin Wall',
+  'kent-state':       'Kent State shootings'
+};
+
+/* initSlideshowImages: fetch Wikipedia thumbnails for all slideshows */
+async function initSlideshowImages() {
+  const entries = Object.entries(SLIDESHOW_DATA);
+  await Promise.all(entries.map(async function(entry) {
+    var ssId   = entry[0];
+    var slides = entry[1];
+    var ssEl   = document.getElementById(ssId);
+    if (!ssEl) return;
+    var imgEls     = ssEl.querySelectorAll('.ss-img');
+    var captionEls = ssEl.querySelectorAll('.ss-caption');
+
+    await Promise.all(slides.map(async function(spec, i) {
+      if (i >= imgEls.length) return;
+      var img     = imgEls[i];
+      var slideEl = img.closest('.ss-slide');
+
+      if (!spec) {
+        if (slideEl) slideEl.classList.add('ss-failed');
+        return;
+      }
+
+      var url;
+      if (spec.type === 'wiki') {
+        url = await getWikiImage(spec.article, spec.fallback || null);
+      } else {
+        url = 'https://source.unsplash.com/800x450/?' + encodeURIComponent(spec.search);
+      }
+
+      if (url) {
+        img.src = url;
+        img.onerror = function() { if (slideEl) slideEl.classList.add('ss-failed'); };
+        if (captionEls[i] && spec.caption) {
+          captionEls[i].textContent = spec.caption + ' — Wikipedia';
+        }
+      } else {
+        if (slideEl) slideEl.classList.add('ss-failed');
+      }
+    }));
+  }));
+}
+
+/* initTooltipThumbs: fetch Wikipedia thumbnails for tooltip portraits */
+async function initTooltipThumbs() {
+  await Promise.all(Object.entries(TOOLTIP_WIKI_ARTICLES).map(async function(entry) {
+    var key     = entry[0];
+    var article = entry[1];
+    var url = await getWikiImage(article);
+    if (url) TOOLTIP_THUMBS[key] = url;
+  }));
+}
+
+initSlideshowImages();
+initTooltipThumbs();
+
+
+
+/* ============================================================
+   TOOLTIP THUMBNAIL DATA  (populated async via Wikipedia API)
+   ============================================================ */
+const TOOLTIP_THUMBS = {};
 
 /* Wire thumbnail into tooltip show logic */
 const tooltipThumbWrap = document.getElementById('tooltipThumbWrap');
